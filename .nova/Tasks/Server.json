@@ -1,0 +1,9 @@
+{
+  "actions" : {
+    "run" : {
+      "enabled" : true,
+      "script" : "\/bin\/bash --login\nrvm use \"ruby-3.2.2\"\nbin\/dev"
+    }
+  },
+  "openLogOnRun" : "start"
+}
