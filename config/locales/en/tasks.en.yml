@@ -1,0 +1,109 @@
+en:
+  tasks: &tasks
+    label: &label Tasks
+    breadcrumbs:
+      label: *label
+    navigation:
+      label: *label
+      icon: fal fa-puzzle-piece
+    buttons: &buttons
+      new: Add New Task
+      create: Create Task
+      edit: Edit Task
+      update: Update Task
+      destroy: Remove Task
+      shorthand:
+        edit: Edit
+        destroy: Delete
+      confirmations:
+        # TODO customize for your use-case.
+        destroy: Are you sure you want to remove %{task_name}? This will also remove any child resources and can't be undone.
+    fields: &fields
+      id:
+        heading: Task ID
+      project_id:
+        heading: Project ID
+      title:
+        _: &title Title
+        label: *title
+        heading: *title
+      notes:
+        _: &notes Notes
+        label: *notes
+        heading: *notes
+      estimated_hours:
+        _: &estimated_hours Estimated Hours
+        label: *estimated_hours
+        heading: *estimated_hours
+      actual_hours:
+        _: &actual_hours Actual Hours
+        label: *actual_hours
+        heading: *actual_hours
+      priority:
+        _: &priority Priority
+        label: *priority
+        heading: *priority
+      # 🚅 super scaffolding will insert new fields above this line.
+      created_at:
+        _: &created_at Added
+        label: *created_at
+        heading: *created_at
+      updated_at:
+        _: &updated_at Updated
+        label: *updated_at
+        heading: *updated_at
+    api:
+      collection_actions: "Collection Actions for Tasks"
+      index: "List Tasks"
+      create: "Add a New Task"
+      member_actions: "Actions for an Individual Task"
+      show: "Retrieve a Task"
+      update: "Update a Task"
+      destroy: "Delete a Task"
+      fields: *fields
+    index:
+      section: "%{projects_possessive} Tasks"
+      contexts:
+        project:
+          header: Tasks
+          description: Below is a list of Tasks that have been added for %{project_name}.
+          description_empty: No Tasks have been added for %{project_name}.
+      fields: *fields
+      buttons: *buttons
+    show:
+      section: "%{task_name}"
+      header: Task Details
+      description: Below are the details we have for %{task_name}.
+      manage_description: You'll also find options for updating these details or removing %{task_name} from %{project_name} entirely.
+      fields: *fields
+      buttons: *buttons
+    form: &form
+      buttons: *buttons
+      fields: *fields
+    new:
+      section: "New Task for %{project_name}"
+      header: New Task Details
+      description: Please provide the details of the new Task you'd like to add to %{project_name}.
+      form: *form
+    edit:
+      section: "%{task_name}"
+      header: Edit Task Details
+      description: You can update the details or settings for %{task_name} below.
+      form: *form
+    notifications:
+      created: Task was successfully created.
+      updated: Task was successfully updated.
+      destroyed: Task was successfully destroyed.
+  account:
+    tasks: *tasks
+  activerecord:
+    attributes:
+      task:
+        title: *title
+        notes: *notes
+        estimated_hours: *estimated_hours
+        actual_hours: *actual_hours
+        priority: *priority
+        # 🚅 super scaffolding will insert new activerecord attributes above this line.
+        created_at: *created_at
+        updated_at: *updated_at
